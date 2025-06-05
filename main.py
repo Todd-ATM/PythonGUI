@@ -1,5 +1,5 @@
 import sys
-from PySide6.QtWidgets import  QApplication, QWidget, QLabel, QInputDialog
+from PySide6.QtWidgets import  QApplication, QWidget, QLabel, QInputDialog, QVBoxLayout
 
 
 #set main Application using Pythons Sys arguments
@@ -12,7 +12,9 @@ window.resize(300, 200)
 label = QLabel(window)
 label.setText("Hello")
 label.alignment()
-text,ok = QInputDialog.getText(window, "Question", "Do you like fries?")
+#create vertical layout, add our label to it
+layout = QVBoxLayout(window)
+layout.addWidget(label)
 window.show()
 
 app.exec()
